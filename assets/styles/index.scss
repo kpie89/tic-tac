@@ -1,7 +1,38 @@
-$background-color: #4e4e4e;
-$font-color: #dfdfdf;
 
-body {
-  background-color: $background-color;
-  color: $font-color;
+html {
+  background-color: #ccffcc;
+}
+header {
+  text-align: center;
+  font-size: 25px;
+  font-family: copperplate;
+  color: #660033;
+  padding-bottom: 200px;
+}
+table#board {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.square {
+  width: 150px;
+  height: 150px;
+}
+.v {
+  border-left: 10px solid #660033;
+  border-right: 10px solid #660033;
+}
+.h {
+  border-top: 10px solid #660033;
+  border-bottom: 10px solid #660033;
+}
+.board {
+  table-align: center;
+}
+footer {
+  margin-top: 50px;
+  font-size: 20px;
+  font-family: monospace;
+  color:pink;
+  text-align: center;
 }
