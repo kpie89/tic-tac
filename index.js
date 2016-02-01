@@ -1,20 +1,18 @@
 'use strict';
 
     $(document).ready(function(){
-        var turnCount=0;
+        let turnCount=0;
 
           $('#board').find('td').on('click', function(){
                 if (turnCount % 2 === 0){
                   $(this).text('X');
-
                 } else {
-               //player 2's turn (O)
                   $(this).text('O');
-
                 }
               turnCount++;
     });
-    $('#newGame').on('click',function(){
+
+    $('#playAgain').on('click',function(){
         $('.square').text('');
     });
 });
