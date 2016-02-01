@@ -1,38 +1,46 @@
-
 html {
   background-color: #ccffcc;
 }
 header {
+  float: inline-block;
   text-align: center;
-  font-size: 25px;
+  font-size: 50px;
   font-family: copperplate;
   color: #660033;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
+  margin-top: 20px;
 }
 table#board {
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .square {
   width: 150px;
   height: 150px;
 }
 .v {
-  border-left: 10px solid #660033;
-  border-right: 10px solid #660033;
+  border-left: 3px solid #660033;
+  border-right: 3px solid #660033;
 }
 .h {
-  border-top: 10px solid #660033;
-  border-bottom: 10px solid #660033;
+  border-top: 3px solid #660033;
+  border-bottom: 3px solid #660033;
 }
 .board {
   table-align: center;
 }
+table {
+    background-color: #ccffcc;
+    text-align:center;
+    font-size: 100px;
+    font-family: copperplate;
+    color: #660033;
+}
 footer {
   margin-top: 50px;
-  font-size: 20px;
-  font-family: monospace;
-  color:pink;
+  font-size: 25px;
+  font-family: copperplate;
+  color:#660033;
   text-align: center;
 }
