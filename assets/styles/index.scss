@@ -1,46 +1,49 @@
-html {
-  background-color: #ccffcc;
-}
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// @import 'ticky-tacky/assets/styles/colors';
 header {
-  float: inline-block;
-  text-align: center;
-  font-size: 50px;
   font-family: copperplate;
-  color: #660033;
-  padding-bottom: 50px;
+  font-size: 50px;
   margin-top: 20px;
+  padding-bottom: 50px;
+  text-align: center;
 }
-table#board {
-  width: 40%;
+
+.table {
   margin-left: 30%;
   margin-right: 30%;
+  width: 40%;
 }
-.square {
-  width: 150px;
+
+.sq {
   height: 150px;
+  width: 150px;
 }
-.v {
-  border-left: 3px solid #660033;
-  border-right: 3px solid #660033;
+
+.i {
+  border-left: 10px solid;
+  border-right: 10px solid;
 }
-.h {
-  border-top: 3px solid #660033;
-  border-bottom: 3px solid #660033;
+
+.j {
+  border-bottom: 10px solid;
+  border-top: 10px solid;
 }
-.board {
-  table-align: center;
-}
+
 table {
-    background-color: #ccffcc;
-    text-align:center;
-    font-size: 100px;
-    font-family: copperplate;
-    color: #660033;
-}
-footer {
-  margin-top: 50px;
-  font-size: 25px;
   font-family: copperplate;
-  color:#660033;
+  font-size: 100px;
+  text-align: center;
+}
+
+.scoreboard {
+  font-family: copperplate;
+  font-size: 20px;
+  text-align: center;
+}
+
+.winner {
+  font-family: copperplate;
+  font-size: 20px;
   text-align: center;
 }
