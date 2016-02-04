@@ -19,7 +19,7 @@
         <button class="btn btn-default navbar-btn signed-out" data-target="#sign-in-modal" data-toggle="modal" type="button">Sign In
         </button>
         <button class="btn btn-default navbar-btn signed-in" data-target="#change-password-modal" data-toggle="modal" type="button">Change Password</button>
-        <button class="btn btn-default navbar-btn signed-out" data-target="#logout-modal" data-toggle="modal" type="button">Logout</button>
+        <button class="btn btn-default navbar-btn signed-out" data-target="#sign-out-modal" data-toggle="modal" type="button">Logout</button>
       </div>
       <!-- /.navbar-collapse -->
     </div>
@@ -112,7 +112,7 @@
           <h4 class="modal-title" id="sign-out-label">For real?</h4>
         </div>
         <div class="modal-body">
-          <input class="btn btn-primary" name="submit" <button type="button" class="btn btn-primary" id="sign-out-button" data-dismiss="modal">Yeah</button>
+          <button type="button" input class="btn btn-primary" name="submit" <button type="button" class="btn btn-primary" id="sign-out-button" data-dismiss="modal">Yeah</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Nah</button>
           </form>
         </div>
@@ -122,15 +122,33 @@
   <header>
     <h1>tic tac toe</h1>
   </header>
-  <div class="winner">
-  </div>
   <div class="scoreboard">
-    <p1 id='x-won'>X-victories: 0</p>
-      <p2 id='o-won'> O-victories: 0</p>
-        <p3 id='victory'>
+    <p id='x-won'>X-victories: 0</p>
+      <p id='o-won'>O-victories: 0</p>
+       <p id='ties'>Ties: 0</p>
+        <p id='victory'>
           </p>
   </div>
-  <div id="game">
+  <!-- <div id="game">
+    <div id="board">
+    <div id="row 1"
+    <div class="sq"></div>
+    <div class="sq i"></div>
+    <div class="sq"></div>
+    </div>
+    <div id="row 2"
+    <div class="sq j"></div>
+    <div class="sq i j"></div>
+    <div class="sq j"></div>
+  </div>
+    <div id="row 3">
+    <div class="sq"></div>
+    <div class="sq i"></div>
+    <div class="sq"></div>
+  </div>
+</div>
+  </div> -->
+   <div id="game">
     <table class="table" id='board'>
       <tr id="row1">
         <td class="sq" id="0"></td>

@@ -1,12 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// @import 'ticky-tacky/assets/styles/colors';
+@import '/Users/kevinpie/wdi/projects/tic-tac/ticky-tacky/assets/styles/colors';
+
+
 header {
+  color: $text-color;
   font-family: copperplate;
-  font-size: 50px;
+  font-size: 200px;
   margin-top: 20px;
-  padding-bottom: 50px;
   text-align: center;
+}
+
+h1 {
+  color: $text-color;
 }
 
 .table {
@@ -20,30 +26,43 @@ header {
   width: 150px;
 }
 
-.i {
-  border-left: 10px solid;
-  border-right: 10px solid;
-}
-
-.j {
-  border-bottom: 10px solid;
-  border-top: 10px solid;
-}
 
 table {
+  color: $text-color;
   font-family: copperplate;
   font-size: 100px;
   text-align: center;
 }
 
 .scoreboard {
+  color: $text-color;
   font-family: copperplate;
   font-size: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#victory {
+  color: $text-color;
+  font-family: copperplate;
+  font-size: 40px;
   text-align: center;
 }
 
-.winner {
-  font-family: copperplate;
-  font-size: 20px;
-  text-align: center;
+.i {
+  border-left: 10px solid !important;
+  border-right: 10px solid !important;
+}
+
+.j {
+  border-bottom: 10px solid !important;
+  border-top: 10px solid !important;
+}
+
+body {
+  background-color: $background-color !important;
+}
+
+td {
+  border-top: none !important;
 }
