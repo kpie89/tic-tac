@@ -3,6 +3,7 @@
 // let playGame = function() {
 let currentPlayer = 'X';
 let turnCount = 0;
+
 let xWins = 0;
 let oWins = 0;
 let board = ['', '', '', '', '', '', '', '', ''];
@@ -30,10 +31,10 @@ let changePlayer = function() {
 let updateScoreboard = function(player) {
   if (player === 'X') {
     xWins++;
-    $('#x-wins').text('X-victories ' + xWins);
+    $('#x-wins').html('X-victories ' + xWins).show();
   } else {
     oWins++;
-    $('#o-wins').text('O-victories ' + xWins);
+    $('#o-wins').html('O-victories ' + oWins).show();
   }
 };
 
@@ -42,7 +43,8 @@ let getWinner = function(player) {
   for (let i = 0; i < winning.length; i++) {
     let newArray = winning[i];
     if (board[newArray[0]] === player && board[newArray[1]] === player && board[newArray[2]] === player) {
-      window.alert(player + ' wins!');
+      $('.victory').html(player + 'WINS!').show();
+
       updateScoreboard();
       resetBoard();
     }
@@ -59,7 +61,7 @@ $(document).ready(function() {
     getWinner(currentPlayer);
     changePlayer();
     if (turnCount >= 9) {
-      window.alert('Cats game. Please play again.');
+      $('.victory').html('Its a tie!').show();
       resetBoard();
     }
   });
