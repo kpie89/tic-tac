@@ -1,5 +1,9 @@
 'use strict';
-require('./example');
+
+console.log('loaded index.js');
+
+// require('./example');
+const ajax = require('./ajax.js');
 
 // load sass manifest
 require('../styles/index.scss');
@@ -14,17 +18,16 @@ let turnCount = 0;
 let playerWon = false;
 let xWins = 0;
 let oWins = 0;
-let tieCount = 0;
 let board = ['', '', '', '', '', '', '', '', ''];
 let winning = [
-[0, 1, 2],
-[3, 4, 5],
-[6, 7, 8],
-[0, 3, 6],
-[1, 4, 7],
-[2, 5, 8],
-[0, 4, 8],
-[2, 4, 6],
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
 ];
 
 // reset board //
@@ -41,8 +44,7 @@ let changePlayer = function() {
 
 // update scoreboard //
 let updateScoreboard = function() {
-  console.log('update score');
-    if (currentPlayer === 'X' && playerWon !== false) {
+  if (currentPlayer === 'X' && playerWon !== false) {
     xWins++;
     $('#x-won').text('X-victories: ' + xWins);
   } else if (currentPlayer === 'O' && playerWon !== false) {
@@ -65,30 +67,27 @@ let getWinner = function(currentPlayer) {
 
 // play game //
 let playGame = function() {
-  $('#board').find('td').click(function() {
-  $('#victory').html(currentPlayer + ' WINS').hide();
-  if (playerWon === true) {
-    resetBoard();
-    playerWon = false;
-  }
-  $(this).text(currentPlayer);
-  board[event.target.id] = currentPlayer;
-  turnCount++;
-  console.log(board);
-  getWinner(currentPlayer);
-  changePlayer();
-  if (turnCount >= 9) {
-    playerWon = false;
-    $('#victory').html('Its a tie!');
-    debugger;
-    resetBoard();
-  }
-});
+  $('#board').find('td').on('click', function() {
+    $('#victory').html(currentPlayer + ' WINS').hide();
+    if (playerWon === true) {
+      resetBoard();
+      playerWon = false;
+    }
+    $(this).text(currentPlayer);
+    board[event.target.id] = currentPlayer;
+    turnCount++;
+    getWinner(currentPlayer);
+    changePlayer(currentPlayer);
+    ajax.updateGame(currentPlayer, event.target.id);
+    if (turnCount === 9 && playerWon === false) {
+      playerWon = false;
+      $('#victory').html('Its a tie!').show();
+      resetBoard();
+    }
+  });
 };
 
-$(document).ready(function() {
-  playGame();
-});
+playGame();
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
