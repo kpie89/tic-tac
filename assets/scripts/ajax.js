@@ -6,6 +6,52 @@ const myApp = {
   BASE_URL: 'http://tic-tac-toe.wdibos.com',
 };
 
+let ajaxCreateGame = function() {
+  console.log(myApp.user);
+  if (!myApp.user) {
+    console.error('Wrong!');
+    return;
+  }
+  $.ajax({
+      url: myApp.BASE_URL + '/games/',
+      method: 'POST',
+      headers: {
+        Authorization: 'Token token=' + myApp.user.token,
+      },
+      data: {}
+    })
+    .done(function(data) {
+      myApp.game = data.game;
+      console.log(data);
+    })
+    .fail(function(jqxhr) {
+      console.error(jqxhr);
+    });
+};
+
+let getGames = function() {
+  if (!myApp.user) {
+    console.error('Wrong!');
+    return;
+  }
+  $.ajax({
+    url: myApp.BASE_URL + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+    data: {}
+  }).done(function(data) {
+    myApp.games = data.games;
+   $('#total-games').html('Total games: ' + myApp.games.length);
+   console.log(data.games.length);
+    console.log(myApp.games);
+  })
+  .fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 $(document).ready(() => {
   $('#sign-up').on('submit', function(e) {
     e.preventDefault();
@@ -24,50 +70,7 @@ $(document).ready(() => {
     });
   });
 
-  let ajaxCreateGame = function() {
-    console.log(myApp.user);
-    if (!myApp.user) {
-      console.error('Wrong!');
-      return;
-    }
-    $.ajax({
-        url: myApp.BASE_URL + '/games/',
-        method: 'POST',
-        headers: {
-          Authorization: 'Token token=' + myApp.user.token,
-        },
-        data: {}
-      })
-      .done(function(data) {
-        debugger;
-        myApp.game = data.game;
-        console.log(data);
-      })
-      .fail(function(jqxhr) {
-        console.error(jqxhr);
-      });
-  };
 
-  let getGames = function() {
-    if (!myApp.user) {
-      console.error('Wrong!');
-      return;
-    }
-    $.ajax({
-      url: myApp.BASE_URL + '/games',
-      method: 'GET',
-      headers: {
-        Authorization: 'Token token=' + myApp.user.token,
-      },
-      data: {}
-    }).done(function(data) {
-      myApp.games = data.games;
-      console.log(myApp.games);
-    })
-    .fail(function(jqxhr) {
-      console.error(jqxhr);
-    });
-  };
 
 
 
@@ -164,5 +167,7 @@ let updateGame = function(currentPlayer, index) {
 };
 
 module.exports = {
-  updateGame: updateGame
+  updateGame,
+  getGames,
+  ajaxCreateGame,
 };
