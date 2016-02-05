@@ -35,6 +35,8 @@ let resetBoard = function() {
   $('#board').find('td').text('');
   turnCount = 0;
   board = ['', '', '', '', '', '', '', '', ''];
+  ajax.ajaxCreateGame();
+  ajax.getGames();
 };
 
 // change player //
