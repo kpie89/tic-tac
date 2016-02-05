@@ -133,8 +133,7 @@ $(document).ready(() => {
       headers: {
         Authorization: 'Token token=' + myApp.user.token,
       },
-    }).done(function() {
-      console.log('You have logged out');
+    }).done(function() { 
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });

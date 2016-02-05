@@ -42,6 +42,7 @@ let resetBoard = function() {
 // change player //
 let changePlayer = function() {
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  $('#turn').text(currentPlayer + 's turn!');
 };
 
 // update scoreboard //
