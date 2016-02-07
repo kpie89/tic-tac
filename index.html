@@ -120,17 +120,15 @@
     </div>
   </div>
   <header>
-    <h1>TIC TAC TOE</h1>
+    <h1>tic  tac  toe</h1>
   </header>
-  <div class="scoreboard col-md-3">
+  <div class="scoreboard col-md-2 col-sm-2 col-xs-10">
     <p id='turn'></p>
     <p id='x-won'>X-victories: 0</p>
       <p id='o-won'>O-victories: 0</p>
-       <p id='total-games'></p>
-        <p id='victory'>
-          </p>
   </div>
-<div class="col-md-6" id="game">
+<div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-10">
+  <div class= "game">
     <table class="table" id='board'>
       <tr id="row1">
         <td class="sq" id="0"></td>
@@ -148,6 +146,12 @@
         <td class="sq" id="8"></td>
       </tr>
     </table>
+  </div>
+</div>
+<div class="track col-md-2 col-md-offset-1 col-sm-2 col-xs-10">
+  <p id='total-games'></p>
+   <p id='victory'>
+     </p>
 </div>
   <script src="http://localhost:8080/webpack-dev-server.js">
   </script>
