@@ -43,15 +43,20 @@ let resetBoard = function() {
 let changePlayer = function() {
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   $('#turn').text(currentPlayer + 's turn!');
+  console.log(turnCount);
+  console.log(xWins);
 };
+
 
 // update scoreboard //
 let updateScoreboard = function() {
-  if (currentPlayer === 'X' && playerWon !== false) {
+  if (currentPlayer === 'X' && playerWon === true) {
     xWins++;
+    console.log(xWins);
     $('#x-won').text('X-victories: ' + xWins);
-  } else if (currentPlayer === 'O' && playerWon !== false) {
+  } else if (currentPlayer === 'O' && playerWon === true) {
     oWins++;
+    console.log(oWins);
     $('#o-won').text('O-victories: ' + oWins);
   }
 };
@@ -64,8 +69,10 @@ let getWinner = function(currentPlayer) {
       playerWon = true;
       $('#victory').html(currentPlayer + ' WINS').show();
       updateScoreboard(currentPlayer);
+
+}
+
     }
-  }
 };
 
 // play game //
@@ -79,14 +86,15 @@ let playGame = function() {
     $(this).text(currentPlayer);
     board[event.target.id] = currentPlayer;
     turnCount++;
-    getWinner(currentPlayer);
-    changePlayer(currentPlayer);
-    ajax.updateGame(currentPlayer, event.target.id);
-    if (turnCount === 9 && playerWon === false) {
+    if (turnCount >= 9 && playerWon === false) {
       playerWon = false;
       $('#victory').html('Its a tie!').show();
       resetBoard();
     }
+    getWinner(currentPlayer);
+    console.log(playerWon);
+    changePlayer(currentPlayer);
+    ajax.updateGame(currentPlayer, event.target.id);
   });
 };
 
