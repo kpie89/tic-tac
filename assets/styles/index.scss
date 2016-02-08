@@ -2,13 +2,81 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '/Users/kevinpie/wdi/projects/tic-tac/ticky-tacky/assets/styles/colors';
 
+$bgDefault      : #00ff00;
+$bgHighlight    : #00ff00;
+$colDefault     : #003300;
+$colHighlight   : #003300;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
 h1 {
-  font-size: 100px;
+  font-size: 75px;
+  text-align: center;
 }
 header {
   color: $text-color;
   font-family: copperplate;
-  font-size: 1000px;
   margin-top: 20px;
   text-align: center;
 }
@@ -18,13 +86,8 @@ h1 {
 }
 
 .table {
-  vertical-align: top;
-  display: inline-block;
-  width: 500px;
-
-
+  margin: 0 auto;
 }
-
 
 .sq {
   height: 150px;
@@ -42,7 +105,7 @@ h1 {
   margin-left: 20px;
 }
 
-#victory {
+.track {
   color: $text-color;
   font-family: copperplate;
   font-size: 40px;
@@ -79,7 +142,6 @@ table {
   margin: 0 auto;
 }
 
-#board {
+.game {
   margin: 0 auto;
-  width: 100;
 }
