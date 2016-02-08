@@ -4,7 +4,7 @@
 
 http://kpie89.github.io/tic-tac/
 
-This is a tic-tac-toe game built using Javascript, jQuery, HTML5 and CSS3. The purpose of the game is to get either 3 X's or 3 O's in a row in order to win.
+This is a tic-tac-toe game built using Javascript, jQuery, HTML5, SCSS and Bootstrap. The purpose of the game is to get either 3 X's or 3 O's in a row in order to win.
 
 ## User Stories
 -As a user I should be able to sign-up, sign-in, change my password and log out.

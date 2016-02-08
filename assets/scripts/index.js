@@ -43,8 +43,6 @@ let resetBoard = function() {
 let changePlayer = function() {
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   $('#turn').text(currentPlayer + 's turn!');
-  console.log(turnCount);
-  console.log(xWins);
 };
 
 
@@ -52,11 +50,9 @@ let changePlayer = function() {
 let updateScoreboard = function() {
   if (currentPlayer === 'X' && playerWon === true) {
     xWins++;
-    console.log(xWins);
     $('#x-won').text('X-victories: ' + xWins);
   } else if (currentPlayer === 'O' && playerWon === true) {
     oWins++;
-    console.log(oWins);
     $('#o-won').text('O-victories: ' + oWins);
   }
 };
@@ -92,7 +88,6 @@ let playGame = function() {
       resetBoard();
     }
     getWinner(currentPlayer);
-    console.log(playerWon);
     changePlayer(currentPlayer);
     ajax.updateGame(currentPlayer, event.target.id);
   });
