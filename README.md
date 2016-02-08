@@ -2,6 +2,8 @@
 
 ## Game
 
+http://kpie89.github.io/tic-tac/
+
 This is a tic-tac-toe game built using Javascript, jQuery, HTML5 and CSS3. The purpose of the game is to get either 3 X's or 3 O's in a row in order to win.
 
 ## User Stories
@@ -11,4 +13,8 @@ This is a tic-tac-toe game built using Javascript, jQuery, HTML5 and CSS3. The p
 
 ## About
 The main things that I struggled with during this process was getting the game logic to make sense and do what it was supposed to do.  There is also much I can still learn about CSS stylings and using bootstrap to produce a much prettier app.
-If I had more time, I would refactor my code so it is more succint and easier to read. I would also work more with CSS and bootstrap to give the game page more bells and whistles. 
+If I had more time, I would refactor my code so it is more succint and easier to read. I would also work more with CSS and bootstrap to give the game page more bells and whistles.
+
+## Wireframe
+
+https://www.dropbox.com/s/uetuku0ntjxmtyz/IMG_1145.JPG?dl=0
