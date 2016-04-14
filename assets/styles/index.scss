@@ -2,10 +2,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '/Users/kevinpie/wdi/projects/tic-tac/ticky-tacky/assets/styles/colors';
 
-$bgDefault      : #00ff00;
-$bgHighlight    : #00ff00;
-$colDefault     : #003300;
-$colHighlight   : #003300;
+$bgDefault      : $text-color;
+$bgHighlight    : $text-color;
+$colDefault     : $background-color;
+$colHighlight   : $background-color;
 $dropDown       : false;
 .navbar-default {
   background-color: $bgDefault;
@@ -97,7 +97,7 @@ h1 {
 
 .scoreboard {
   color: $text-color;
-  font-family: 'Fjalla One', sans-serif;;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
   text-align: center;
   padding-bottom: 10px;
@@ -108,7 +108,7 @@ h1 {
 
 .track {
   color: $text-color;
-  font-family: copperplate;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 40px;
   text-align: center;
 }
@@ -153,4 +153,8 @@ footer {
   color: $text-color;
   font-size: 20px;
 
+}
+
+html {
+  font-family: 'Fjalla One', sans-serif;
 }
