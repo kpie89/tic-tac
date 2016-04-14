@@ -52,19 +52,15 @@ webpackJsonp([0],[
 	var changePlayer = function changePlayer() {
 	  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 	  $('#turn').text(currentPlayer + 's turn!');
-	  console.log(turnCount);
-	  console.log(xWins);
 	};
 
 	// update scoreboard //
 	var updateScoreboard = function updateScoreboard() {
 	  if (currentPlayer === 'X' && playerWon === true) {
 	    xWins++;
-	    console.log(xWins);
 	    $('#x-won').text('X-victories: ' + xWins);
 	  } else if (currentPlayer === 'O' && playerWon === true) {
 	    oWins++;
-	    console.log(oWins);
 	    $('#o-won').text('O-victories: ' + oWins);
 	  }
 	};
@@ -98,7 +94,6 @@ webpackJsonp([0],[
 	      resetBoard();
 	    }
 	    getWinner(currentPlayer);
-	    console.log(playerWon);
 	    changePlayer(currentPlayer);
 	    ajax.updateGame(currentPlayer, event.target.id);
 	  });

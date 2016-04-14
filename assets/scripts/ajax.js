@@ -133,7 +133,8 @@ $(document).ready(() => {
       headers: {
         Authorization: 'Token token=' + myApp.user.token,
       },
-    }).done(function() { 
+    }).done(function() {
+      $('#total-games').html().hide();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
