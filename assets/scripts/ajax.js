@@ -65,6 +65,7 @@ $(document).ready(() => {
     }).done(function(data) {
       console.log(data);
       $('#sign-up-modal').modal('hide');
+      signIn();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
@@ -74,7 +75,8 @@ $(document).ready(() => {
 
 
 
-  $('#sign-in').on('submit', function(e) {
+  let signIn = function() {
+    $('#sign-in').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(e.target);
     $.ajax({
@@ -93,6 +95,7 @@ $(document).ready(() => {
       console.error(jqxhr);
     });
   });
+};
 
   $('#change-password').on('submit', function(e) {
     e.preventDefault();
