@@ -12,8 +12,7 @@ This is a tic-tac-toe game built using Javascript, jQuery, HTML5, SCSS and Boots
 -A user, when they have successfully won, can expect the win to be displayed and accounted for.
 
 ## About
-The main things that I struggled with during this process was getting the game logic to make sense and do what it was supposed to do.  There is also much I can still learn about CSS stylings and using bootstrap to produce a much prettier app.
-If I had more time, I would refactor my code so it is more succint and easier to read. I would also work more with CSS and bootstrap to give the game page more bells and whistles.
+The main challenge I struggled with during this process was making sense of the game logic and getting it to perform correctly. There is still so much for me to learn about CSS styling and using bootstrap to produce a more esthetically pleasing app. If I had more time, I would refactor my code in order to be more succinct and easier to read. I would also work more with CSS and bootstrap to give the game page more bells and whistles.
 
 ## Wireframe
 
